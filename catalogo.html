@@ -310,6 +310,32 @@
     .empty-state svg { width: 60px; height: 60px; stroke: var(--muted); margin: 0 auto 20px; display: block; }
     .empty-state p { color: var(--muted); font-size: 0.9rem; }
 
+    /* ── SKELETON LOADERS ── */
+    .skeleton-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 360px;
+      position: relative;
+    }
+    .skeleton-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(139,184,224,0.06) 50%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.6s infinite;
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% 0; }
+      100% { background-position:  200% 0; }
+    }
+
     /* ── MODAL ── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 300;
@@ -540,173 +566,15 @@
 <section class="catalog-section">
   <div class="catalog-grid" id="catalogGrid">
 
-    <!-- 1 - Maceta -->
-    <div class="product-card" data-cat="deco" data-id="0">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><path d="M45 95 Q40 70 40 55 Q40 35 60 30 Q80 35 80 55 Q80 70 75 95 Z" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.06)"/><path d="M50 95 Q47 75 47 58 Q47 42 60 38 Q73 42 73 58 Q73 75 70 95 Z" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)" opacity="0.7"/><ellipse cx="60" cy="96" rx="18" ry="5" stroke="#3a7bbd" stroke-width="1" fill="rgba(58,123,189,0.1)"/><circle cx="54" cy="65" r="2" fill="#3a7bbd" opacity="0.4"/><circle cx="66" cy="72" r="2" fill="#3a7bbd" opacity="0.4"/></svg>
-        </div>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Decoración & Hogar</p>
-        <h3 class="card-name">Maceta Geométrica</h3>
-        <p class="card-desc">Diseños modernos, con o sin drenaje. Varios tamaños y colores para suculentas o plantas pequeñas.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    <!-- Skeleton loaders — se reemplazan cuando carga Firebase -->
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
 
-    <!-- 2 - Organizador -->
-    <div class="product-card" data-cat="deco" data-id="1">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><rect x="30" y="20" width="60" height="80" rx="8" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.06)"/><rect x="40" y="30" width="40" height="30" rx="4" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.05)"/><line x1="40" y1="70" x2="80" y2="70" stroke="#3a7bbd" stroke-width="1" opacity="0.5"/><line x1="40" y1="80" x2="70" y2="80" stroke="#3a7bbd" stroke-width="1" opacity="0.3"/><circle cx="60" cy="45" r="4" fill="#8bb8e0" opacity="0.6"/></svg>
-        </div>
-        <span class="card-badge">Popular</span>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Decoración & Hogar</p>
-        <h3 class="card-name">Organizador de Escritorio</h3>
-        <p class="card-desc">Organizadores modulares para lapiceras, cables, tarjetas y más. Limpio y funcional.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3 - Jarra -->
-    <div class="product-card" data-cat="bebidas" data-id="2">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><rect x="25" y="40" width="70" height="55" rx="10" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.05)"/><rect x="45" y="25" width="30" height="18" rx="5" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.05)"/><path d="M95 55 Q110 65 95 75" stroke="#8bb8e0" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="25" y1="58" x2="95" y2="58" stroke="#3a7bbd" stroke-width="0.8" opacity="0.35"/></svg>
-        </div>
-        <span class="card-badge new">Bebidas</span>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Bebidas</p>
-        <h3 class="card-name">Jarra Chopera</h3>
-        <p class="card-desc">Impresa en PETG apto para contacto con líquidos. Resistente y lavable. Varios tamaños disponibles.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4 - Fidget -->
-    <div class="product-card" data-cat="juguetes" data-id="3">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="35" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.04)"/><circle cx="60" cy="60" r="22" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)" stroke-dasharray="4 3"/><circle cx="60" cy="60" r="10" stroke="#c8dff5" stroke-width="1" fill="rgba(200,223,245,0.06)"/><circle cx="60" cy="60" r="4" fill="#3a7bbd" opacity="0.9"/><rect x="57" y="22" width="6" height="10" rx="2" fill="#3a7bbd" opacity="0.6"/><rect x="57" y="88" width="6" height="10" rx="2" fill="#3a7bbd" opacity="0.6"/><rect x="22" y="57" width="10" height="6" rx="2" fill="#3a7bbd" opacity="0.6"/><rect x="88" y="57" width="10" height="6" rx="2" fill="#3a7bbd" opacity="0.6"/></svg>
-        </div>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Juguetes & Fidgets</p>
-        <h3 class="card-name">Fidget Articulado</h3>
-        <p class="card-desc">Articulado, liviano y muy satisfactorio de usar. Varios modelos y colores. Ideal para regalo.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5 - Spinner -->
-    <div class="product-card" data-cat="juguetes" data-id="4">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><polygon points="60,10 100,35 100,85 60,110 20,85 20,35" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.06)"/><polygon points="60,25 85,40 85,75 60,90 35,75 35,40" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)" opacity="0.7"/><circle cx="60" cy="60" r="5" fill="#3a7bbd" opacity="0.7"/></svg>
-        </div>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Juguetes & Fidgets</p>
-        <h3 class="card-name">Spinner 3D</h3>
-        <p class="card-desc">Bien balanceado y con buen tiempo de giro. Varios diseños en distintos colores.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6 - Llavero -->
-    <div class="product-card" data-cat="custom" data-id="5">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><path d="M35 80 L35 45 Q35 30 50 30 L70 30 Q85 30 85 45 L85 80" stroke="#3a7bbd" stroke-width="1.5" fill="none"/><path d="M25 80 L95 80 L90 95 L30 95 Z" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.05)"/><rect x="50" y="42" width="20" height="25" rx="3" stroke="#c8dff5" stroke-width="1" fill="rgba(200,223,245,0.06)" opacity="0.7"/><circle cx="60" cy="54" r="5" fill="#3a7bbd" opacity="0.5"/></svg>
-        </div>
-        <span class="card-badge new">Personalizado</span>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Personalizados</p>
-        <h3 class="card-name">Llavero con Logo o Nombre</h3>
-        <p class="card-desc">Con tu logo, nombre o símbolo. Por unidad o en cantidad. El diseño debe estar listo.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7 - Porta objetos -->
-    <div class="product-card" data-cat="deco" data-id="6">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><rect x="30" y="20" width="60" height="80" rx="12" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.06)"/><ellipse cx="60" cy="45" rx="18" ry="18" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)"/><circle cx="60" cy="45" r="3" fill="#3a7bbd" opacity="0.7"/><line x1="40" y1="78" x2="80" y2="78" stroke="#3a7bbd" stroke-width="1" opacity="0.4"/></svg>
-        </div>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Decoración & Hogar</p>
-        <h3 class="card-name">Porta Objetos / Taza</h3>
-        <p class="card-desc">Portatazas, portavelas y piezas decorativas para el hogar. Varios modelos y colores.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 8 - Figura -->
-    <div class="product-card" data-cat="custom" data-id="7">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><path d="M60 15 L95 35 L95 85 L60 105 L25 85 L25 35 Z" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.05)"/><path d="M60 35 L80 45 L80 75 L60 85 L40 75 L40 45 Z" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)"/><circle cx="60" cy="63" r="4" fill="#3a7bbd" opacity="0.8"/></svg>
-        </div>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Personalizados</p>
-        <h3 class="card-name">Figura Decorativa</h3>
-        <p class="card-desc">Personajes, animales u objetos a partir de un archivo STL. Traés el modelo y lo imprimimos.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 9 - Pedido especial -->
-    <div class="product-card" data-cat="custom" data-id="8">
-      <div class="card-img-wrap">
-        <div class="product-svg">
-          <svg viewBox="0 0 120 120" fill="none"><rect x="20" y="20" width="80" height="80" rx="16" stroke="#3a7bbd" stroke-width="1.5" fill="rgba(58,123,189,0.04)" stroke-dasharray="6 3"/><path d="M55 60 L65 60 M60 55 L60 65" stroke="#8bb8e0" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="60" r="18" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.04)" opacity="0.6"/><circle cx="60" cy="60" r="6" fill="rgba(58,123,189,0.3)"/></svg>
-        </div>
-        <span class="card-badge new">Consultá</span>
-      </div>
-      <div class="card-body">
-        <p class="card-category">Personalizados</p>
-        <h3 class="card-name">Pedido Especial</h3>
-        <p class="card-desc">¿Algo fuera del catálogo? Escribime. Si el diseño ya existe, lo imprimimos. Por unidad o en cantidad.</p>
-        <div class="card-footer">
-          <div class="card-price">Consultar <span>precio</span></div>
-          <button class="card-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Ver detalle</button>
-        </div>
-      </div>
-    </div>
-
-        <div class="empty-state" id="emptyState">
+    <div class="empty-state" id="emptyState">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
@@ -765,14 +633,8 @@
   // ════════════════════════════════════════════
   // 🔧 MISMA CONFIG que en admin.html
   // ════════════════════════════════════════════
- 
-// Import the functions you need from the SDKs you need
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyC8k59qs7HsyVHRZHQVXAWuFZI7BSSqwZg",
+ const firebaseConfig = {
+     apiKey: "AIzaSyC8k59qs7HsyVHRZHQVXAWuFZI7BSSqwZg",
     authDomain: "forgen-studio.firebaseapp.com",
     projectId: "forgen-studio",
     storageBucket: "forgen-studio.firebasestorage.app",
@@ -780,8 +642,6 @@
     appId: "1:737361071183:web:56dbea9fa1bd026af72e3a",
     measurementId: "G-F5QWNJRJ72"
   };
-
-
 
   const PHONE = '59800000000'; // ← Tu número real de WhatsApp
 
@@ -819,9 +679,17 @@
   });
 
   // ── RENDER CARDS ──
+  let firstLoad = true;
+
   function renderCards(prods) {
     const grid = document.getElementById('catalogGrid');
     const empty = document.getElementById('emptyState');
+
+    // Remove skeleton loaders on first real render
+    if (firstLoad) {
+      grid.querySelectorAll('.skeleton-card').forEach(s => s.remove());
+      firstLoad = false;
+    }
 
     if (!prods.length) {
       grid.innerHTML = '';
