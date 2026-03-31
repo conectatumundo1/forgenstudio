@@ -276,11 +276,14 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .card-price {
-      font-family: 'Jersey 15', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      color: var(--ice-bright);
-    }
-    .card-price span { font-size: 0.65rem; font-weight: 400; color: var(--muted); margin-left: 4px; font-family: 'DM Sans', sans-serif; }
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.card-price::before {
+  content: "$ ";
+}
     .card-btn {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(58,123,189,0.18);
