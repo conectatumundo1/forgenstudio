@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="forgenstudio_logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jersey 15:wght@400;600;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --black: #06080f;
@@ -127,7 +127,7 @@
       filter: drop-shadow(0 0 10px rgba(58,123,189,0.5));
     }
     .nav-logo span {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey', sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
       letter-spacing: 0.08em;
@@ -192,14 +192,14 @@
       width: 100%; height: 100%;
       object-fit: cover;
       opacity: 0.22;
-      filter: saturate(0.4) brightness(0.7);
+      filter: saturate(0.9) brightness(0.7);
     }
     /* gradient overlay so text stays readable */
     .hero-video-wrap::after {
       content: '';
       position: absolute; inset: 0;
       background:
-        linear-gradient(to right, rgba(6,8,15,0.92) 45%, rgba(6,8,15,0.3) 100%),
+        linear-gradient(to right, rgba(6, 8, 15, 0.644) 45%, rgba(6,8,15,0.3) 100%),
         linear-gradient(to bottom, rgba(6,8,15,0.3) 0%, rgba(6,8,15,0.7) 100%);
     }
 
@@ -235,7 +235,7 @@
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey', sans-serif;
       font-weight: 900;
       font-size: clamp(2.4rem, 5.5vw, 4rem);
       line-height: 1.08;
@@ -395,7 +395,7 @@
     }
 
     .stat-num {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey', sans-serif;
       font-size: 1.7rem;
       font-weight: 800;
       color: var(--ice);
@@ -423,7 +423,7 @@
       margin-bottom: 12px;
     }
     .section-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey', sans-serif;
       font-size: clamp(1.6rem, 3vw, 2.1rem);
       font-weight: 800;
       color: var(--white);
@@ -504,7 +504,7 @@
       margin-bottom: 8px;
     }
     .card-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey  ', sans-serif;
       font-size: 0.92rem;
       font-weight: 700;
       color: var(--ice);
@@ -550,7 +550,7 @@
     }
 
     .step-num {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey  ', sans-serif;
       font-size: 2.6rem;
       font-weight: 900;
       color: rgba(58,123,189,0.18);
@@ -558,7 +558,7 @@
       line-height: 1;
     }
     .step-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey  ', sans-serif;
       font-size: 0.82rem;
       font-weight: 700;
       color: var(--ice);
@@ -617,7 +617,7 @@
 
     .channel-info { flex: 1; }
     .channel-name {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey  ', sans-serif;
       font-size: 0.85rem; font-weight: 700;
       color: var(--ice); margin-bottom: 4px;
     }
@@ -689,7 +689,7 @@
       border-radius: 8px;
     }
     .footer-brand span {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey  ', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
       color: var(--muted);
@@ -755,12 +755,9 @@
 <!-- HERO -->
 <section class="hero">
 
-  <!-- Video de fondo: descargá uno de https://www.pexels.com/search/videos/3d%20printer/
-       y guardalo como "hero-video.mp4" en la misma carpeta.
-       Recomendados: pexels.com/video/3d-printer-27596569 o pexels.com/video/3d-printing-24861303 -->
   <div class="hero-video-wrap">
     <video autoplay muted loop playsinline preload="auto">
-      <source src="../hero-video.mp4" type="video/mp4" />
+      <source src="./hero_video.mp4" type="video/mp4" />
     </video>
   </div>
 
@@ -824,71 +821,44 @@
 
     <div class="catalog-card">
       <div class="card-img">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 65 Q27 50 27 40 Q27 25 40 22 Q53 25 53 40 Q53 50 50 65 Z" stroke="#3a7bbd" stroke-width="1.2" fill="rgba(58,123,189,0.06)"/>
-          <ellipse cx="40" cy="66" rx="13" ry="4" stroke="#3a7bbd" stroke-width="1" fill="rgba(58,123,189,0.08)"/>
-          <path d="M34 65 Q32 52 32 42 Q32 30 40 27 Q48 30 48 42 Q48 52 46 65 Z" stroke="#8bb8e0" stroke-width="0.8" fill="rgba(139,184,224,0.04)" opacity="0.7"/>
-          <circle cx="37" cy="48" r="1.5" fill="#3a7bbd" opacity="0.4"/>
-          <circle cx="43" cy="54" r="1.5" fill="#3a7bbd" opacity="0.4"/>
-        </svg>
+       <img src="../conejo-poligonal - ForgenStudio.png" style="width: 100%; height: 200px; object-fit: cover;" alt="Decoracion" />
       </div>
       <div class="card-body">
         <p class="card-tag">Decoración</p>
-        <h3 class="card-title">Macetas Geométricas</h3>
-        <p class="card-desc">Diseños modernos con o sin drenaje. Ideales para suculentas y plantas pequeñas.</p>
+        <h3 class="card-title">Conejo Poligonal</h3>
+        <p class="card-desc">Diseños modernos con o sin drenaje. Ideales para decoración de espacios.</p>
       </div>
     </div>
 
     <div class="catalog-card">
       <div class="card-img">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="18" y="28" width="44" height="36" rx="6" stroke="#3a7bbd" stroke-width="1.2" fill="rgba(58,123,189,0.05)"/>
-          <rect x="28" y="18" width="24" height="13" rx="4" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.05)"/>
-          <line x1="18" y1="38" x2="62" y2="38" stroke="#3a7bbd" stroke-width="0.7" opacity="0.4"/>
-          <circle cx="32" cy="50" r="4" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.06)"/>
-          <circle cx="48" cy="50" r="4" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.06)"/>
-        </svg>
+       <img src="../organizador - ForgenStudio.png" style="width: 100%; height: 200px; object-fit: cover;" alt="Organizadores" />
       </div>
       <div class="card-body">
-        <p class="card-tag">Bebidas</p>
-        <h3 class="card-title">Jarras Choperas</h3>
-        <p class="card-desc">Jarras para choperas impresas en PETG apto para contacto con líquidos. Varios tamaños.</p>
+        <p class="card-tag">Utiles</p>
+        <h3 class="card-title">Organizador</h3>
+        <p class="card-desc">Organizadores para tu espacio. Diseños modernos y funcionales.</p>
       </div>
     </div>
 
     <div class="catalog-card">
       <div class="card-img">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="22" y="22" width="36" height="36" rx="8" stroke="#3a7bbd" stroke-width="1.2" fill="rgba(58,123,189,0.05)"/>
-          <circle cx="40" cy="40" r="10" stroke="#8bb8e0" stroke-width="1" fill="rgba(139,184,224,0.05)" stroke-dasharray="3 2"/>
-          <circle cx="40" cy="40" r="5" fill="rgba(58,123,189,0.2)" stroke="#3a7bbd" stroke-width="0.8"/>
-          <circle cx="40" cy="40" r="2" fill="#8bb8e0" opacity="0.8"/>
-          <circle cx="28" cy="28" r="3" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.1)"/>
-          <circle cx="52" cy="28" r="3" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.1)"/>
-          <circle cx="28" cy="52" r="3" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.1)"/>
-          <circle cx="52" cy="52" r="3" stroke="#c8dff5" stroke-width="0.8" fill="rgba(200,223,245,0.1)"/>
-        </svg>
+        <img src="jarronpoligonal.png" style="width: 100%; height: 200px; object-fit: cover;" alt="jarron" />
       </div>
       <div class="card-body">
-        <p class="card-tag">Juguetes</p>
-        <h3 class="card-title">Fidgets & Antiestress</h3>
-        <p class="card-desc">Juguetes fidget, spinners y objetos antiestress articulados. Gran variedad de modelos.</p>
+        <p class="card-tag">Jarrones</p>
+        <h3 class="card-title">Jarron Poligonal</h3>
+        <p class="card-desc">Jarrones poligonales impresas en material resistente. Ideales para decoración de espacios.</p>
       </div>
     </div>
 
     <div class="catalog-card">
       <div class="card-img">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="24" y="20" width="32" height="22" rx="5" stroke="#3a7bbd" stroke-width="1.2" fill="rgba(58,123,189,0.05)"/>
-          <circle cx="40" cy="31" r="6" stroke="#8bb8e0" stroke-width="0.8" fill="rgba(139,184,224,0.05)"/>
-          <path d="M36 52 Q40 60 44 52" stroke="#3a7bbd" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-          <path d="M40 42 L40 52" stroke="#3a7bbd" stroke-width="1.2" stroke-linecap="round"/>
-          <circle cx="40" cy="31" r="2.5" fill="#3a7bbd" opacity="0.6"/>
-        </svg>
+        <img src="IMG_4265 - ForgenStudio.jpg" style="width: 100%; height: 200px; object-fit: cover;" alt="Llaveros con logo" />
       </div>
       <div class="card-body">
         <p class="card-tag">Personalizado</p>
-        <h3 class="card-title">Llaveros con Logo</h3>
+        <h3 class="card-title">Llaveros </h3>
         <p class="card-desc">Llaveros con tu logo, nombre o diseño favorito. Ideales para regalos o merchandising.</p>
       </div>
     </div>
@@ -990,7 +960,7 @@
 
   <div class="contact-note">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-    En este momento no realizamos piezas 100% personalizadas desde cero en diseño 3D. Soy el que imprime — si traés el archivo o el diseño ya hecho, lo hacemos realidad.
+    En este momento no realizamos piezas 100% personalizadas desde cero en diseño 3D. Pero escribeme igual con tu idea y vemos si podemos adaptarla a algo que ya tengamos para imprimir. También podemos hablar opciones de color y material disponible para cada producto. ¡Gracias por entender!
   </div>
 </section>
 
@@ -1000,7 +970,7 @@
     <img src="forgenstudio_logo.jpg" alt="Forgen Studio" />
     <span>Forgen Studio</span>
   </a>
-  <p>© 2025 Forgen Studio — Minas, Lavalleja, Uruguay</p>
+  <p>© 2026 Forgen Studio — Minas, Lavalleja, Uruguay</p>
   <p>Impresión 3D de precisión</p>
 </footer>
 
@@ -1026,3 +996,14 @@
   const cardObserver = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
+               e.target.style.animation = `fadeUp 0.6s ease both ${i * 0.08}s`;
+        e.target.style.opacity = '1';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(c => { c.style.opacity = '0'; cardObserver.observe(c); });
+</script>
+
+</body>
+</html>
