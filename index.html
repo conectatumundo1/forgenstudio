@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forgen Studio – Impresión 3D en Uruguay</title>
+  <link rel="icon" type="image/jpeg" href="forgenstudio_logo.jpg" />
+  <link rel="apple-touch-icon" href="forgenstudio_logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -177,6 +179,28 @@
       padding: 140px 5% 100px;
       overflow: hidden;
       z-index: 1;
+    }
+
+    /* ── VIDEO BACKGROUND ── */
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-video-wrap video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.22;
+      filter: saturate(0.4) brightness(0.7);
+    }
+    /* gradient overlay so text stays readable */
+    .hero-video-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(6,8,15,0.92) 45%, rgba(6,8,15,0.3) 100%),
+        linear-gradient(to bottom, rgba(6,8,15,0.3) 0%, rgba(6,8,15,0.7) 100%);
     }
 
     .hero-content {
@@ -730,6 +754,16 @@
 
 <!-- HERO -->
 <section class="hero">
+
+  <!-- Video de fondo: descargá uno de https://www.pexels.com/search/videos/3d%20printer/
+       y guardalo como "hero-video.mp4" en la misma carpeta.
+       Recomendados: pexels.com/video/3d-printer-27596569 o pexels.com/video/3d-printing-24861303 -->
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="hero-video.mp4" type="video/mp4" />
+    </video>
+  </div>
+
   <div class="hero-content">
     <div class="hero-badge">Minas · Lavalleja · Uruguay</div>
     <h1>Objetos impresos<br /><span>en 3D, a tu pedido</span></h1>
@@ -938,7 +972,7 @@
       <div class="channel-arrow">→</div>
     </a>
 
-    <a href="mailto:forgenstudio@gmail.com" class="channel-card">
+    <a href="/cdn-cgi/l/email-protection#2a4c45584d4f44595e5f4e43456a4d474b434604494547" class="channel-card">
       <div class="channel-icon" style="background:rgba(58,123,189,0.12); border-color:rgba(58,123,189,0.3);">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8bb8e0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="3"/>
@@ -947,7 +981,7 @@
       </div>
       <div class="channel-info">
         <h3 class="channel-name">Email</h3>
-        <p class="channel-handle">forgenstudio@gmail.com</p>
+        <p class="channel-handle"><span class="__cf_email__" data-cfemail="a2c4cdd0c5c7ccd1d6d7c6cbcde2c5cfc3cbce8cc1cdcf">[email&#160;protected]</span></p>
       </div>
       <div class="channel-arrow">→</div>
     </a>
@@ -970,7 +1004,7 @@
   <p>Impresión 3D de precisión</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Active nav link on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -992,14 +1026,3 @@
   const cardObserver = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        e.target.style.animation = `fadeUp 0.6s ease both ${i * 0.08}s`;
-        e.target.style.opacity = '1';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  cards.forEach(c => { c.style.opacity = '0'; cardObserver.observe(c); });
-</script>
-
-</body>
-</html>
