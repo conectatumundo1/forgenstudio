@@ -985,7 +985,8 @@
         await deleteDoc(doc(db, 'productos', pendingDeleteId));
         showToast('Producto eliminado', 'success');
       } catch (e) {
-        showToast('Error al eliminar', 'error');
+       showToast('Error: ' + e.message, 'error');
+console.error('Delete error:', e);
       }
     };
   };
