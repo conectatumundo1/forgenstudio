@@ -6,7 +6,7 @@
   <title>Catálogo – Forgen Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jersey 15:wght@400;600;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
       --black: #06080f;
@@ -79,7 +79,7 @@
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo img { width: 34px; height: 34px; object-fit: contain; border-radius: 10px; filter: drop-shadow(0 0 10px rgba(58,123,189,0.5)); }
-    .nav-logo span { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; color: var(--ice); }
+    .nav-logo span { font-family: 'Jersey 15', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; color: var(--ice); }
     .nav-back {
       display: inline-flex; align-items: center; gap: 8px;
       color: var(--muted); text-decoration: none;
@@ -111,7 +111,7 @@
       color: var(--blue); margin-bottom: 14px;
     }
     .page-title {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey 15', sans-serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 900; color: var(--white);
       margin-bottom: 16px;
@@ -260,7 +260,7 @@
       color: var(--blue); margin-bottom: 8px;
     }
     .card-name {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey 15', sans-serif;
       font-size: 0.92rem; font-weight: 700;
       color: var(--ice); margin-bottom: 10px; line-height: 1.35;
     }
@@ -276,11 +276,12 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .card-price {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      color: var(--ice-bright);
-    }
-    .card-price span { font-size: 0.65rem; font-weight: 400; color: var(--muted); margin-left: 4px; font-family: 'DM Sans', sans-serif; }
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+
     .card-btn {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(58,123,189,0.18);
@@ -409,7 +410,7 @@
     }
 
     .modal-name {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Jersey 15', sans-serif;
       font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 800;
       color: var(--white); margin-bottom: 16px; line-height: 1.25;
     }
@@ -431,13 +432,13 @@
       text-align: center;
     }
     .spec-label { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-    .spec-val { font-family: 'Orbitron', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--ice); }
+    .spec-val { font-family: 'Jersey 15', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--ice); }
 
     .modal-footer {
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
     }
     .modal-price {
-      font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--ice-bright);
+      font-family: 'Jersey 15', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--ice-bright);
     }
     .modal-price small { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 300; color: var(--muted); display: block; margin-top: 2px; }
 
@@ -479,7 +480,7 @@
     }
     .footer-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .footer-brand img { width: 26px; height: 26px; object-fit: contain; border-radius: 8px; }
-    .footer-brand span { font-family: 'Orbitron', sans-serif; font-size: 0.76rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em; }
+    .footer-brand span { font-family: 'Jersey 15', sans-serif; font-size: 0.76rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em; }
     footer p { font-size: 0.72rem; color: var(--muted); }
 
     /* ── ANIMATIONS ── */
@@ -738,6 +739,7 @@
         </div>`;
 
       card.addEventListener('click', () => openModal(p));
+      card.querySelector('.card-btn').addEventListener('click', e => { e.stopPropagation(); openModal(p); });
       grid.insertBefore(card, empty);
     });
   }
