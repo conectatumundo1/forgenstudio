@@ -182,13 +182,14 @@
     /* ── GRID ── */
     .catalog-section {
       position: relative; z-index: 1;
-      padding: 0 5% 100px;
+     padding: 100px 15%;
     }
 
     .catalog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 22px;
+      
     }
 
     /* ── PRODUCT CARD ── */
@@ -276,12 +277,11 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .card-price {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #27ae60;
-}
-
-
+      font-family: 'Jersey 15', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--ice-bright);
+    }
+    .card-price span { font-size: 0.65rem; font-weight: 400; color: var(--muted); margin-left: 4px; font-family: 'DM Sans', sans-serif; }
     .card-btn {
       display: inline-flex; align-items: center; gap: 7px;
       background: rgba(58,123,189,0.18);
@@ -730,8 +730,9 @@
           <h3 class="card-name">${p.name || ''}</h3>
           <p class="card-desc">${p.description || ''}</p>
           <div class="card-footer">
-            <div class="card-price">${priceStr}</div>
-            <button class="card-btn">
+            <div class="card-price" style="display: inline-block; padding: 5px 10px; background: #27ae60; color: white; font-weight: bold; border-radius: 8px;">
+  ${priceStr}
+</div>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
               Ver detalle
             </button>
