@@ -633,7 +633,7 @@
   // ════════════════════════════════════════════
   // 🔧 MISMA CONFIG que en admin.html
   // ════════════════════════════════════════════
-const firebaseConfig = {
+  const firebaseConfig = {
      apiKey: "AIzaSyC8k59qs7HsyVHRZHQVXAWuFZI7BSSqwZg",
     authDomain: "forgen-studio.firebaseapp.com",
     projectId: "forgen-studio",
@@ -661,6 +661,8 @@ const firebaseConfig = {
   let allProducts = [];
   let activeFilter = 'all';
   let currentProduct = null;
+
+  document.addEventListener('DOMContentLoaded', () => {
 
   // ── LISTEN FROM FIRESTORE ──
   const q = query(
@@ -747,7 +749,7 @@ const firebaseConfig = {
   const searchInput = document.getElementById('searchInput');
 
   function applyFilters() {
-    const q = searchInput.value.toLowerCase().trim();
+    const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const filtered = allProducts.filter(p => {
       const matchFilter = activeFilter === 'all' || p.category === activeFilter;
       const matchSearch = !q || (p.name||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q);
@@ -757,27 +759,29 @@ const firebaseConfig = {
   }
 
   pills.forEach(pill => {
+    if (!pill) return;
     pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('active'));
+      pills.forEach(p => p && p.classList.remove('active'));
       pill.classList.add('active');
       activeFilter = pill.dataset.filter;
       applyFilters();
     });
   });
-  searchInput.addEventListener('input', applyFilters);
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
 
   // ── MODAL ──
-  const overlay   = document.getElementById('modalOverlay');
-  const modalImg  = document.getElementById('modalImg');
-  const modalCat  = document.getElementById('modalCat');
+  const overlay    = document.getElementById('modalOverlay');
+  const modalImg   = document.getElementById('modalImg');
+  const modalCat   = document.getElementById('modalCat');
   const modalBadge = document.getElementById('modalBadge');
-  const modalName = document.getElementById('modalName');
-  const modalDesc = document.getElementById('modalDesc');
+  const modalName  = document.getElementById('modalName');
+  const modalDesc  = document.getElementById('modalDesc');
   const modalSpecs = document.getElementById('modalSpecs');
-  const modalWapp = document.getElementById('modalWapp');
+  const modalWapp  = document.getElementById('modalWapp');
   const modalPrice = document.getElementById('modalPrice');
 
   function openModal(p) {
+    if (!overlay) return;
     currentProduct = p;
     // image
     if (p.imageUrl) {
@@ -820,9 +824,12 @@ const firebaseConfig = {
     document.body.style.overflow = '';
   }
 
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  const modalCloseBtn = document.getElementById('modalClose');
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  }); // end DOMContentLoaded
 </script>
 
 </body>
