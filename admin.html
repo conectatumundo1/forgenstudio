@@ -965,27 +965,28 @@
   };
 
   // ── DELETE ──
-  window.deleteProduct = (id, name) => {
-    pendingDeleteId      = id;
+ window.deleteProduct = (id, name) => {
+    pendingDeleteId = id;
     document.getElementById('confirmMsg').textContent = `¿Eliminar "${name}"? Esta acción no se puede deshacer.`;
     document.getElementById('confirmOverlay').classList.add('open');
     document.getElementById('confirmDeleteBtn').onclick = async () => {
+      const idToDelete = pendingDeleteId; // capturamos ANTES de cerrar
+      const prodToDelete = products.find(x => x.id === idToDelete);
       closeConfirm();
       try {
-        // Delete from Imgur if we have the deleteHash
-        const prod = products.find(x => x.id === pendingDeleteId);
-        if (prod && prod.imageDeleteHash) {
+        if (prodToDelete && prodToDelete.imageDeleteHash) {
           try {
-            await fetch(`https://api.imgur.com/3/image/${prod.imageDeleteHash}`, {
+            await fetch(`https://api.imgur.com/3/image/${prodToDelete.imageDeleteHash}`, {
               method: 'DELETE',
               headers: { Authorization: `Client-ID ${imgurClientId}` }
             });
           } catch {}
         }
-        await deleteDoc(doc(db, 'productos', pendingDeleteId));
+        await deleteDoc(doc(db, 'productos', idToDelete));
         showToast('Producto eliminado', 'success');
       } catch (e) {
-        showToast('Error al eliminar', 'error');
+        showToast('Error: ' + e.message, 'error');
+        console.error('Delete error:', e);
       }
     };
   };
